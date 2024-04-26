@@ -6,7 +6,7 @@
 /*   By: lgandari <lgandari@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 12:07:46 by lgandari          #+#    #+#             */
-/*   Updated: 2024/04/26 12:33:00 by lgandari         ###   ########.fr       */
+/*   Updated: 2024/04/26 13:05:11 by lgandari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	sa(t_stack_node **a, bool print)
 		ft_printf("sa\n");
 }
 
-void	sb(t_stack_node **a, bool print)
+void	sb(t_stack_node **b, bool print)
 {
 	swap(b);
 	if (print)

@@ -6,7 +6,7 @@
 #    By: lgandari <lgandari@student.42madrid.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/26 11:59:45 by lgandari          #+#    #+#              #
-#    Updated: 2024/04/26 12:59:00 by lgandari         ###   ########.fr        #
+#    Updated: 2024/04/26 13:04:30 by lgandari         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,9 +19,8 @@ NC		=	\033[0m
 SRC_DIR = src/
 OBJ_DIR = obj/
 INC_DIR	= inc/
-CMDS_DIR = cmds/
 
-SRC     = $(addprefix $(SRC_DIR), main.c test_utils.c)
+SRC     = $(addprefix $(SRC_DIR), main.c test_utils.c swap_cmds.c)
 OBJ     = $(SRC:$(SRC_DIR)%.c=$(OBJ_DIR)%.o)
 
 LIBFT	= libft_v2//libft_v2.a

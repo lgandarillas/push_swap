@@ -6,7 +6,7 @@
 /*   By: lgandari <lgandari@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 12:53:38 by lgandari          #+#    #+#             */
-/*   Updated: 2024/04/26 12:53:41 by lgandari         ###   ########.fr       */
+/*   Updated: 2024/04/26 13:05:50 by lgandari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	print_stack(t_stack_node *head)
 {
-	ft_printf("Stack content:\n");
+	ft_printf("Stack content: ");
 	while (head != NULL)
 	{
 		ft_printf("%d ", head->num);

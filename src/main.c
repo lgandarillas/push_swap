@@ -6,7 +6,7 @@
 /*   By: lgandari <lgandari@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 11:50:28 by lgandari          #+#    #+#             */
-/*   Updated: 2024/04/26 13:00:06 by lgandari         ###   ########.fr       */
+/*   Updated: 2024/04/26 13:03:17 by lgandari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ int	main(void)
 	push(&head, 20);
 	push(&head, 30);
 	push(&head, 40);
+	sa(&head, true);
 	print_stack(head);
 	free_stack(head);
 	return (0);
