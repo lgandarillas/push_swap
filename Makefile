@@ -6,7 +6,7 @@
 #    By: lgandari <lgandari@student.42madrid.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/26 11:59:45 by lgandari          #+#    #+#              #
-#    Updated: 2024/04/26 12:00:42 by lgandari         ###   ########.fr        #
+#    Updated: 2024/04/26 12:59:00 by lgandari         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,9 +18,10 @@ NC		=	\033[0m
 
 SRC_DIR = src/
 OBJ_DIR = obj/
-INC_DIR = inc/
+INC_DIR	= inc/
+CMDS_DIR = cmds/
 
-SRC     = $(addprefix $(SRC_DIR), main.c)
+SRC     = $(addprefix $(SRC_DIR), main.c test_utils.c)
 OBJ     = $(SRC:$(SRC_DIR)%.c=$(OBJ_DIR)%.o)
 
 LIBFT	= libft_v2//libft_v2.a
@@ -36,9 +37,9 @@ $(OBJ_DIR)%.o: $(SRC_DIR)%.c
 	@mkdir -p $(OBJ_DIR)
 	@$(CC) $(CFLAGS) $(INCS) -c $< -o $@
 
-all: $(LIBFT) $(NAME)
+all: 	$(LIBFT) $(NAME)
 
-$(NAME): $(OBJ)
+$(NAME):$(OBJ)
 	@$(CC) $(OBJ) -L$(LIBFT_PATH) -lft_v2 -o $(NAME)
 	@echo "$(GREEN)Compiling push_swap...$(NC)"
 
