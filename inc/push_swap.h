@@ -6,7 +6,7 @@
 /*   By: lgandari <lgandari@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 11:45:36 by lgandari          #+#    #+#             */
-/*   Updated: 2024/04/26 12:58:30 by lgandari         ###   ########.fr       */
+/*   Updated: 2024/05/02 19:13:47 by lgandari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,18 +29,21 @@ typedef struct s_stack_node
 	bool				cheapest;
 	struct s_stack_node	*target;
 	struct s_stack_node	*next;
-	struct s_stack_node	*prev;
 }	t_stack_node;
+
+// Error handling
+
+// Stack initiation
+
+// Node initiation
+
+// Stack utils
 
 // Commands
 void			sa(t_stack_node **a, bool print);
 void			sb(t_stack_node **b, bool print);
 void			ss(t_stack_node **a, t_stack_node **b, bool print);
 
-// Testing function
-void			print_stack(t_stack_node *head);
-void			push(t_stack_node **head, int num);
-void			free_stack(t_stack_node *head);
-t_stack_node	*create_node(int num);
+// Algorithms
 
 #endif

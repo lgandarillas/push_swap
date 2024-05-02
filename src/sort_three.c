@@ -1,32 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_cmds.c                                        :+:      :+:    :+:   */
+/*   sort_three.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgandari <lgandari@student.42madrid>       +#+  +:+       +#+        */
+/*   By: lgandari <lgandari@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/26 20:14:33 by lgandari          #+#    #+#             */
-/*   Updated: 2024/05/02 19:15:24 by lgandari         ###   ########.fr       */
+/*   Created: 2024/05/02 19:10:24 by lgandari          #+#    #+#             */
+/*   Updated: 2024/05/02 19:12:02 by lgandari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-void	push(t_stack_node **a, t_stack_node **b)
+void	sort_three(t_stack_node **a)
 {
-	// to_be_done
-}
+	t_stack_node	*biggest_node;
 
-void	pa(t_stack_node **a, t_stack_node **b, bool print)
-{
-	push(a, b);
-	if (print)
-		ft_printf("pa\n");
-}
-
-void	pb(t_stack_node **a, t_stack_node **b, bool print)
-{
-	push(b, a);
-	if (print)
-		ft_printf("pb\n");
+	biggest_node = find_max(*a);
+	if (biggest_node == *a)
+		ra(a, false);
+	else if ((*a)->next == biggest_node)
+		rra(a, false);
+	if ((*a)->num > (*a)->next->num)
+		sa(a, false);
 }

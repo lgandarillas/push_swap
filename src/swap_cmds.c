@@ -6,7 +6,7 @@
 /*   By: lgandari <lgandari@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 12:07:46 by lgandari          #+#    #+#             */
-/*   Updated: 2024/04/26 13:05:11 by lgandari         ###   ########.fr       */
+/*   Updated: 2024/05/02 19:16:06 by lgandari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,7 @@
 
 static void	swap(t_stack_node **head)
 {
-	if ((*head) == NULL || (*head)->next == NULL)
-		return ;
-	(*head) = (*head)->next;
-	(*head)->prev->prev = *head;
-	(*head)->prev->next = (*head)->next;
-	if ((*head)->next)
-		(*head)->next->prev = (*head)->prev;
-	(*head)->next = (*head)->prev;
-	(*head)->prev = NULL;
+	// to_be_done
 }
 
 void	sa(t_stack_node **a, bool print)
