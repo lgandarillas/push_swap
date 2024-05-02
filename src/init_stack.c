@@ -6,7 +6,7 @@
 /*   By: lgandari <lgandari@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 18:56:25 by lgandari          #+#    #+#             */
-/*   Updated: 2024/05/02 20:04:43 by lgandari         ###   ########.fr       */
+/*   Updated: 2024/05/02 20:45:17 by lgandari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,8 +70,10 @@ int	init_stack_a(t_stack_node **a, char **argv)
 		if (error_syntax(argv[i]))
 			free_errors(a);
 		a = ft_atol(argv[i]);
-		if (n > INT_MAX || n > INT_MIN)
-			free_errors(a);				// not_yet
+		if (n > INT_MAX || n < INT_MIN)
+			free_errors(a);
+		if (error_duplicate(*a, (int)n))
+			free_errors(a);
 		append_node(a, (int)n);
 		i++;
 	}
