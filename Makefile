@@ -6,7 +6,7 @@
 #    By: lgandari <lgandari@student.42madrid.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/26 11:59:45 by lgandari          #+#    #+#              #
-#    Updated: 2024/04/26 13:04:30 by lgandari         ###   ########.fr        #
+#    Updated: 2024/05/03 21:13:57 by lgandari         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ SRC_DIR = src/
 OBJ_DIR = obj/
 INC_DIR	= inc/
 
-SRC     = $(addprefix $(SRC_DIR), main.c test_utils.c swap_cmds.c)
+SRC     = $(addprefix $(SRC_DIR), main.c string_utils.c)
 OBJ     = $(SRC:$(SRC_DIR)%.c=$(OBJ_DIR)%.o)
 
 LIBFT	= libft_v2//libft_v2.a
@@ -28,7 +28,7 @@ LIBFT_PATH	= libft_v2/
 
 CC      = gcc
 CFLAGS  = -Wall -Wextra -Werror
-DFLAGS	= -g3
+DFLAGS	= -fsanitize=address -g3
 RM      = rm -f
 INCS    = -I $(INC_DIR)
 

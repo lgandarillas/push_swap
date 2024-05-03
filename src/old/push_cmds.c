@@ -1,40 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap_cmds.c                                        :+:      :+:    :+:   */
+/*   push_cmds.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgandari <lgandari@student.42madrid.com>   +#+  +:+       +#+        */
+/*   By: lgandari <lgandari@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/26 12:07:46 by lgandari          #+#    #+#             */
-/*   Updated: 2024/05/02 19:16:06 by lgandari         ###   ########.fr       */
+/*   Created: 2024/04/26 20:14:33 by lgandari          #+#    #+#             */
+/*   Updated: 2024/05/03 20:12:50 by lgandari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-static void	swap(t_stack_node **head)
+void	push(t_stack_node **a, t_stack_node **b)
 {
-	// to_be_done
 }
 
-void	sa(t_stack_node **a, bool print)
+void	pa(t_stack_node **a, t_stack_node **b, bool print)
 {
-	swap(a);
+	push(a, b);
 	if (print)
-		ft_printf("sa\n");
+		ft_printf("pa\n");
 }
 
-void	sb(t_stack_node **b, bool print)
+void	pb(t_stack_node **a, t_stack_node **b, bool print)
 {
-	swap(b);
+	push(b, a);
 	if (print)
-		ft_printf("sb\n");
-}
-
-void	ss(t_stack_node **a, t_stack_node **b, bool print)
-{
-	swap(a);
-	swap(b);
-	if (print)
-		ft_printf("ss\n");
+		ft_printf("pb\n");
 }

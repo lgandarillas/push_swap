@@ -6,7 +6,7 @@
 /*   By: lgandari <lgandari@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 11:45:36 by lgandari          #+#    #+#             */
-/*   Updated: 2024/05/02 19:13:47 by lgandari         ###   ########.fr       */
+/*   Updated: 2024/05/03 20:14:40 by lgandari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,12 @@
 # include "../libft_v2/inc/libft.h"
 # include "../libft_v2/inc/get_next_line.h"
 # include "../libft_v2/inc/ft_printf.h"
+
+// String utils
+void	print_split(char **str);
+void	free_split(char **str);
+
+// Old
 
 typedef struct s_stack_node
 {
