@@ -6,7 +6,7 @@
 /*   By: lgandari <lgandari@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 11:50:28 by lgandari          #+#    #+#             */
-/*   Updated: 2024/05/04 09:43:35 by lgandari         ###   ########.fr       */
+/*   Updated: 2024/05/04 11:10:49 by lgandari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,27 @@
 
 int	main(int argc, char **argv)
 {
+	char	*linecmds;
 	char	**cmds;
 
+	linecmds = NULL;
 	if (argc == 1)
 		return (1);
 	else if (argc == 2 && !argv[1][0])
 		return (1);
+	else if (argc > 2)
+	{
+		linecmds = parse_cmds(argc, argv);
+		cmds = ft_split(linecmds, ' ');
+		free(linecmds);
+	}
 	else
 	{
-		argv[1] = parse_cmds(argc, argv);
 		cmds = ft_split(argv[1], ' ');
 	}
 	print_split(cmds);
 	free_split(cmds);
-	free(argv[1]);
+	//free(argv[1]);
 	return (0);
 }
 
