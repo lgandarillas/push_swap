@@ -6,15 +6,13 @@
 /*   By: lgandari <lgandari@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/04 09:42:09 by lgandari          #+#    #+#             */
-/*   Updated: 2024/05/04 11:11:52 by lgandari         ###   ########.fr       */
+/*   Updated: 2024/05/04 11:39:37 by lgandari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-
-
-char	*parse_cmds(int argc, char **argv)
+static char	*get_cmd_line(int argc, char **argv)
 {
 	int		i;
 	char	*linecmds;
@@ -35,32 +33,22 @@ char	*parse_cmds(int argc, char **argv)
 	return (linecmds);
 }
 
-/*
+char	**parser(int argc, char **argv)
 {
-	int		i;
-	char	*new;
-	char	*withspace;
-	char	*result;
+	char	**cmds;
+	char	*linecmds;
 
-	i = 2;
-	result = ft_strdup(argv[1]);
-	if (!result)
-		return (NULL);
-	if (argc > 2)
+	if (argc == 1)
+		exit(EXIT_FAILURE);
+	if (argc == 2 && !argv[1][0])
+		exit(EXIT_FAILURE);
+	else if (argc == 2)
+		cmds = ft_split(argv[1], ' ');
+	else if (argc > 2)
 	{
-		while (i < argc)
-		{
-			withspace = ft_strjoin(result, " ");
-			new = ft_strjoin(withspace, argv[i]);
-			free(withspace);
-			free(result);
-			result = ft_strdup(new);
-			if (!result)
-				return (NULL);
-			free(new);
-			i++;
-		}
+		linecmds = get_cmd_line(argc, argv);
+		cmds = ft_split(linecmds, ' ');
+		free(linecmds);
 	}
-	return (result);
+	return (cmds);
 }
-*/

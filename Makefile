@@ -6,7 +6,7 @@
 #    By: lgandari <lgandari@student.42madrid.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/26 11:59:45 by lgandari          #+#    #+#              #
-#    Updated: 2024/05/04 09:42:58 by lgandari         ###   ########.fr        #
+#    Updated: 2024/05/04 11:15:49 by lgandari         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ LIBFT	= libft_v2//libft_v2.a
 LIBFT_PATH	= libft_v2/
 
 CC      = gcc
-CFLAGS  = -Wall -Wextra -Werror
+CFLAGS  = -Wall -Wextra -Werror -g3
 DFLAGS	= -fsanitize=address -g3
 RM      = rm -f
 INCS    = -I $(INC_DIR)
