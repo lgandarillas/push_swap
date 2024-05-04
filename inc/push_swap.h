@@ -6,7 +6,7 @@
 /*   By: lgandari <lgandari@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 11:45:36 by lgandari          #+#    #+#             */
-/*   Updated: 2024/05/03 20:14:40 by lgandari         ###   ########.fr       */
+/*   Updated: 2024/05/04 09:44:09 by lgandari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@
 // String utils
 void	print_split(char **str);
 void	free_split(char **str);
+char	*parse_cmds(int argc, char **argv);
 
 // Old
 
@@ -46,9 +47,9 @@ typedef struct s_stack_node
 // Stack utils
 
 // Commands
-void			sa(t_stack_node **a, bool print);
-void			sb(t_stack_node **b, bool print);
-void			ss(t_stack_node **a, t_stack_node **b, bool print);
+void	sa(t_stack_node **a, bool print);
+void	sb(t_stack_node **b, bool print);
+void	ss(t_stack_node **a, t_stack_node **b, bool print);
 
 // Algorithms
 

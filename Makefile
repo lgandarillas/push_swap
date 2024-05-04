@@ -6,7 +6,7 @@
 #    By: lgandari <lgandari@student.42madrid.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/26 11:59:45 by lgandari          #+#    #+#              #
-#    Updated: 2024/05/03 21:13:57 by lgandari         ###   ########.fr        #
+#    Updated: 2024/05/04 09:42:58 by lgandari         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ SRC_DIR = src/
 OBJ_DIR = obj/
 INC_DIR	= inc/
 
-SRC     = $(addprefix $(SRC_DIR), main.c string_utils.c)
+SRC     = $(addprefix $(SRC_DIR), main.c string_utils.c parser.c)
 OBJ     = $(SRC:$(SRC_DIR)%.c=$(OBJ_DIR)%.o)
 
 LIBFT	= libft_v2//libft_v2.a
