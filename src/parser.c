@@ -6,7 +6,7 @@
 /*   By: lgandari <lgandari@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/04 09:42:09 by lgandari          #+#    #+#             */
-/*   Updated: 2024/05/04 09:42:43 by lgandari         ###   ########.fr       */
+/*   Updated: 2024/05/04 10:16:19 by lgandari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ char	*parse_cmds(int argc, char **argv)
 {
 	int		i;
 	char	*new;
+	char	*withspace;
 	char	*result;
 
 	i = 2;
@@ -26,7 +27,9 @@ char	*parse_cmds(int argc, char **argv)
 	{
 		while (i < argc)
 		{
-			new = ft_strjoin(result, argv[i]);
+			withspace = ft_strjoin(result, " ");
+			new = ft_strjoin(withspace, argv[i]);
+			free(withspace);
 			free(result);
 			result = ft_strdup(new);
 			if (!result)
