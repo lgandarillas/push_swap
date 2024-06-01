@@ -6,7 +6,7 @@
 /*   By: lgandari <lgandari@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/04 09:42:09 by lgandari          #+#    #+#             */
-/*   Updated: 2024/06/01 16:25:22 by lgandari         ###   ########.fr       */
+/*   Updated: 2024/06/01 17:05:39 by lgandari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ char	**parser(int argc, char **argv)
 	char	*linecmds;
 
 	if (argc == 1)
-		print_error();
+		exit(EXIT_FAILURE);
 	if (argc == 2 && !argv[1][0])
 		print_error();
 	else if (argc == 2)
