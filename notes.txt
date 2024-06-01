@@ -1,5 +1,10 @@
-## EXECUTE PUSH_SWAP
+## PENDIENTE
+- print stack
+- free stack
+- video 32:00
 
+
+## EXECUTE PUSH_SWAP
 # Test with checker_linux
 ARG="5 -3 42"; ./push_swap $ARG | ./checker_linux $ARG
 --> Da OK o KO

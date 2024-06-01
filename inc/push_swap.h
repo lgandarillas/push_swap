@@ -6,7 +6,7 @@
 /*   By: lgandari <lgandari@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 11:45:36 by lgandari          #+#    #+#             */
-/*   Updated: 2024/06/01 13:36:15 by lgandari         ###   ########.fr       */
+/*   Updated: 2024/06/01 16:11:33 by lgandari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@ char	*parse_cmds(int argc, char **argv);
 
 void	init_stack(t_stack_node **a, char **args);
 void	print_error(void);
+
+void	print_stack(t_stack_node *s);
 
 // Commands
 void	sa(t_stack_node **a, bool print);
