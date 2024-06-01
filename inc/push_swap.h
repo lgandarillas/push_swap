@@ -6,7 +6,7 @@
 /*   By: lgandari <lgandari@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 11:45:36 by lgandari          #+#    #+#             */
-/*   Updated: 2024/06/01 11:42:57 by lgandari         ###   ########.fr       */
+/*   Updated: 2024/06/01 12:33:19 by lgandari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ char	**parser(int argc, char **argv);
 char	*parse_cmds(int argc, char **argv);
 
 void	print_error(void);
+int		get_num(const char *num);
 
 typedef struct s_stack_node
 {
