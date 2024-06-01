@@ -1,12 +1,22 @@
 ## PENDIENTE
-- video 32:00
-- Movimientos básicos: ra, rra, sa...
+
+# MOVIMIENTOS BÁSICOS
+- push.c + test
+- rev_rotate.c + test
+- rotate.c + test
+- sort_stacks.c + test
+- sort_three.c + test
+- swap.c + test
+
+# ALGORITMOS
+- sort_three()
 - turk_sort()
 
-## EXECUTE PUSH_SWAP
-# Test with checker_linux
-ARG="5 -3 42"; ./push_swap $ARG | ./checker_linux $ARG
---> Da OK o KO
+# VIDEO
+- min 32:00
 
-# Test with number of commands
+# TEST SWAP
+- linux_cecker
+ARG="5 -3 42"; ./push_swap $ARG | ./checker_linux $ARG
+- Check the number of commands executed
 ARG="5 -3 42"; ./push_swap &ARG | wc -l
