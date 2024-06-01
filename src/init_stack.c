@@ -6,7 +6,7 @@
 /*   By: lgandari <lgandari@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/01 11:56:15 by lgandari          #+#    #+#             */
-/*   Updated: 2024/06/01 13:22:04 by lgandari         ###   ########.fr       */
+/*   Updated: 2024/06/01 13:32:45 by lgandari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ static int	get_num(const char *num)
 	return (res);
 }
 
-void	init_stack_a(t_stack_node **a, char **args)
+void	init_stack(t_stack_node **a, char **args)
 {
 	int	n;
 	int	i;
