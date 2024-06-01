@@ -1,5 +1,4 @@
 ## PENDIENTE
-- print stack
 - free stack
 - video 32:00
 
