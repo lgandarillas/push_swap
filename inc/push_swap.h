@@ -6,7 +6,7 @@
 /*   By: lgandari <lgandari@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 11:45:36 by lgandari          #+#    #+#             */
-/*   Updated: 2024/05/04 11:37:55 by lgandari         ###   ########.fr       */
+/*   Updated: 2024/06/01 11:01:05 by lgandari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,12 @@
 # include "../libft_v2/inc/get_next_line.h"
 # include "../libft_v2/inc/ft_printf.h"
 
-// String utils
 void	print_split(char **str);
 void	free_split(char **str);
 char	**parser(int argc, char **argv);
 char	*parse_cmds(int argc, char **argv);
+
+void	print_error(void);
 
 // Old
 

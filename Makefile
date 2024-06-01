@@ -6,7 +6,7 @@
 #    By: lgandari <lgandari@student.42madrid.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/26 11:59:45 by lgandari          #+#    #+#              #
-#    Updated: 2024/06/01 10:31:03 by lgandari         ###   ########.fr        #
+#    Updated: 2024/06/01 10:59:50 by lgandari         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ RED		=	\033[0;31m
 GREEN	=	\033[0;32m
 NC		=	\033[0m 
 
-CFLAGS  = -Wall -Wextra -Werror #-g3 -fsanitize=address
+CFLAGS  = -Wall -Wextra -Werror -g3 -fsanitize=address
 CC      = gcc
 RM      = rm -f
 
@@ -24,7 +24,7 @@ LIBFT	= libft_v2//libft_v2.a
 LIBFT_PATH	= libft_v2/
 
 SRC_DIR = src/
-SRCS	= $(addprefix $(SRC_DIR), main.c string_utils.c parser.c)
+SRCS	= $(addprefix $(SRC_DIR), main.c string_utils.c parser.c error.c)
 
 OBJS	= $(SRCS:.c=.o)
 
