@@ -1,6 +1,7 @@
 ## PENDIENTE
 - video 32:00
-
+- Movimientos básicos: ra, rra, sa...
+- turk_sort()
 
 ## EXECUTE PUSH_SWAP
 # Test with checker_linux
