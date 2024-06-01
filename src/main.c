@@ -6,7 +6,7 @@
 /*   By: lgandari <lgandari@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 11:50:28 by lgandari          #+#    #+#             */
-/*   Updated: 2024/06/01 12:48:59 by lgandari         ###   ########.fr       */
+/*   Updated: 2024/06/01 12:54:02 by lgandari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	main(int argc, char **argv)
 
 	// TO DO
 	//init_stack_a(&a, ...);
-	/ *
+	/*
 	if (!stack_sorted(a))
 	{
 		if (stack_len(a) == 2)
@@ -36,7 +36,7 @@ int	main(int argc, char **argv)
 			sort_stacks(&a, &b);
 	}
 	free_stack(&a);
-	* /
+	*/
 	free_split(cmds);
 	return (0);
 }
