@@ -6,7 +6,7 @@
 /*   By: lgandari <lgandari@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/04 09:42:09 by lgandari          #+#    #+#             */
-/*   Updated: 2024/06/01 11:54:22 by lgandari         ###   ########.fr       */
+/*   Updated: 2024/06/01 16:25:22 by lgandari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ void	free_split(char **str)
 		free(str[i]);
 		i++;
 	}
+	free(str);
 }
 
 static char	*get_cmd_line(int argc, char **argv)
