@@ -6,7 +6,7 @@
 /*   By: lgandari <lgandari@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/01 11:56:15 by lgandari          #+#    #+#             */
-/*   Updated: 2024/06/01 16:15:29 by lgandari         ###   ########.fr       */
+/*   Updated: 2024/06/01 16:29:02 by lgandari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,7 @@ static void	append_node(t_stack_node **stack, int n)
 	{
 		last_node = *stack;
 		while (last_node->next)
-		{
 			last_node = last_node->next;
-		}
 		last_node->next = node;
 	}
 }
@@ -59,19 +57,13 @@ static int	get_num(const char *num)
 	while (*num)
 	{
 		if (ft_isdigit(*num) == 0)
-		{
-			print_error();
-			return (0);
-		}
+			return (print_error(), 0);
 		res = res * 10 + *num - '0';
 		num++;
 	}
 	res *= sign;
 	if (res > INT_MAX || res < INT_MIN)
-	{
-		print_error();
-		return (0);
-	}
+		return (print_error(), 0);
 	return (res);
 }
 

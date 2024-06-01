@@ -6,7 +6,7 @@
 /*   By: lgandari <lgandari@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 11:50:28 by lgandari          #+#    #+#             */
-/*   Updated: 2024/06/01 16:16:07 by lgandari         ###   ########.fr       */
+/*   Updated: 2024/06/01 16:27:20 by lgandari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	main(int argc, char **argv)
 {
-	char	**args;
+	char			**args;
 	t_stack_node	*a;
 	//t_stack_node	*b;
 
