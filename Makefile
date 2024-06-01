@@ -6,7 +6,7 @@
 #    By: lgandari <lgandari@student.42madrid.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/26 11:59:45 by lgandari          #+#    #+#              #
-#    Updated: 2024/05/04 11:15:49 by lgandari         ###   ########.fr        #
+#    Updated: 2024/06/01 10:31:03 by lgandari         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,48 +16,38 @@ RED		=	\033[0;31m
 GREEN	=	\033[0;32m
 NC		=	\033[0m 
 
-SRC_DIR = src/
-OBJ_DIR = obj/
-INC_DIR	= inc/
-
-SRC     = $(addprefix $(SRC_DIR), main.c string_utils.c parser.c)
-OBJ     = $(SRC:$(SRC_DIR)%.c=$(OBJ_DIR)%.o)
+CFLAGS  = -Wall -Wextra -Werror #-g3 -fsanitize=address
+CC      = gcc
+RM      = rm -f
 
 LIBFT	= libft_v2//libft_v2.a
 LIBFT_PATH	= libft_v2/
 
-CC      = gcc
-CFLAGS  = -Wall -Wextra -Werror -g3
-DFLAGS	= -fsanitize=address -g3
-RM      = rm -f
-INCS    = -I $(INC_DIR)
+SRC_DIR = src/
+SRCS	= $(addprefix $(SRC_DIR), main.c string_utils.c parser.c)
 
-$(OBJ_DIR)%.o: $(SRC_DIR)%.c
-	@mkdir -p $(OBJ_DIR)
-	@$(CC) $(CFLAGS) $(INCS) -c $< -o $@
+OBJS	= $(SRCS:.c=.o)
 
-all: 	$(LIBFT) $(NAME)
+all : $(NAME)
 
-$(NAME):$(OBJ)
-	@$(CC) $(OBJ) -L$(LIBFT_PATH) -lft_v2 -o $(NAME)
+$(NAME)	: $(OBJS)
+	@make all -sC $(LIBFT_PATH)
+	$(CC) $(CFLAGS) $(OBJS) -I ../../inc/push_swap.h $(LIBFT) -o $(NAME)
 	@echo "$(GREEN)Compiling push_swap...$(NC)"
 
-$(LIBFT):
-	@$(MAKE) -C $(LIBFT_PATH)
-
 clean:
-	@$(RM) -rf $(OBJ_DIR)
-	@$(MAKE) clean -C $(LIBFT_PATH) > /dev/null
-	@echo "$(RED)Cleaning push_swap...$(NC)"
+	@$(RM) $(OBJS)
+	@$(RM) $(OBJS_BONUS)
+	@make clean -sC $(LIBFT_PATH)
+	@echo "$(RED)All Objs Deleted.$(NC)"
 
 fclean: clean
 	@$(RM) $(NAME)
-	@$(RM) -r $(OBJ_DIR)
-	@$(MAKE) fclean -C $(LIBFT_PATH) > /dev/null
+	@$(RM) $(NAME_BONUS)
+	@$(RM) $(LIBFT)
+	@echo "$(RED)Everything Deleted.$(NC)"
 
 re: fclean all
 
-debug: CFLAGS += $(DFLAGS)
-debug: re
-
 .PHONY: all clean fclean re
+.SILENT:
