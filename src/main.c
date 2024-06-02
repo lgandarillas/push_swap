@@ -6,7 +6,7 @@
 /*   By: lgandari <lgandari@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 11:50:28 by lgandari          #+#    #+#             */
-/*   Updated: 2024/06/02 16:58:05 by lgandari         ###   ########.fr       */
+/*   Updated: 2024/06/02 17:31:00 by lgandari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,22 +25,17 @@ int	main(int argc, char **argv)
 	init_stack(&a, args);
 	print_stack(a);
 	ft_printf("Is sorted = %d\n", is_sorted(a));
-	ft_printf("Has duplicates = %d\n", has_duplicates(a));
 	if (has_duplicates(a))
 		stack_error(a, args);
-	sa(&a);
-	print_stack(a);
-	/*
-	if (!is_sorted(a) && !has_duplicates(a))
+	if (!is_sorted(a))
 	{
-		if (stack_len(a) == 2) -> OK
+		if (stack_len(a) == 2)
 			sa(&a, false);
 		else if (stack_len(a) == 3)
 			sort_three(&a);
-		else
-			turk_sort(&a, &b);
+		//else
+		//	turk_sort(&a, &b);
 	}
-	*/
 	free_stack(a);
 	free_split(args);
 	return (0);
