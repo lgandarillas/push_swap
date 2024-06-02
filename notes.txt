@@ -2,8 +2,8 @@
 
 # MOVIMIENTOS BÁSICOS
 OK - swap_cmd.c
-OK - rotate_cmd.c + test
-- rev_rotate.c + test
+OK - rotate_cmd.c
+OK - rev_rotate.c
 - push.c + test
 - sort_stacks.c + test
 - sort_three.c + test
