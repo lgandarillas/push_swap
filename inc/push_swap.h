@@ -6,7 +6,7 @@
 /*   By: lgandari <lgandari@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 11:45:36 by lgandari          #+#    #+#             */
-/*   Updated: 2024/06/02 18:09:00 by lgandari         ###   ########.fr       */
+/*   Updated: 2024/06/02 18:39:22 by lgandari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,16 +49,19 @@ t_stack_node	*get_last_node(t_stack_node *s);
 int				is_sorted(t_stack_node *s);
 void			sort_three(t_stack_node **a);
 
+void			pa(t_stack_node **a, t_stack_node **b);
+void			pb(t_stack_node **a, t_stack_node **b);
+
 void			sa(t_stack_node **a);
 void			sb(t_stack_node **b);
 void			ss(t_stack_node **a, t_stack_node **b);
 
-void	ra(t_stack_node **a);
-void	rb(t_stack_node **b);
-void	rr(t_stack_node **a, t_stack_node **b);
+void			ra(t_stack_node **a);
+void			rb(t_stack_node **b);
+void			rr(t_stack_node **a, t_stack_node **b);
 
-void	rra(t_stack_node **a);
-void	rrb(t_stack_node **b);
-void	rrr(t_stack_node **a, t_stack_node **b);
+void			rra(t_stack_node **a);
+void			rrb(t_stack_node **b);
+void			rrr(t_stack_node **a, t_stack_node **b);
 
 #endif

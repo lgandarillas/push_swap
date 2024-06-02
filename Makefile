@@ -6,7 +6,7 @@
 #    By: lgandari <lgandari@student.42madrid.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/26 11:59:45 by lgandari          #+#    #+#              #
-#    Updated: 2024/06/02 18:10:28 by lgandari         ###   ########.fr        #
+#    Updated: 2024/06/02 18:40:27 by lgandari         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ LIBFT_PATH	= libft_v2/
 
 SRC_DIR = src/
 SRCS	= $(addprefix $(SRC_DIR), error.c stack_utils.c init_stack.c parser.c  \
-		  swap_cmd.c rotate_cmd.c rev_rotate_cmd.c sort.c main.c)
+		  swap_cmd.c rotate_cmd.c rev_rotate_cmd.c push_cmd.c sort.c main.c)
 OBJS	= $(SRCS:.c=.o)
 
 all : $(NAME)
