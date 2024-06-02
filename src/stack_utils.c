@@ -6,25 +6,11 @@
 /*   By: lgandari <lgandari@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/01 16:30:56 by lgandari          #+#    #+#             */
-/*   Updated: 2024/06/02 16:20:46 by lgandari         ###   ########.fr       */
+/*   Updated: 2024/06/02 16:39:33 by lgandari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
-
-void	free_stack(t_stack_node *s)
-{
-	t_stack_node	*current;
-	t_stack_node	*next_node;
-
-	current = s;
-	while (current != NULL)
-	{
-		next_node = current->next;
-		free(current);
-		current = next_node;
-	}
-}
 
 void	print_stack(t_stack_node *s)
 {

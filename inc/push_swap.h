@@ -6,7 +6,7 @@
 /*   By: lgandari <lgandari@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 11:45:36 by lgandari          #+#    #+#             */
-/*   Updated: 2024/06/02 16:21:08 by lgandari         ###   ########.fr       */
+/*   Updated: 2024/06/02 16:43:33 by lgandari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ void	print_stack(t_stack_node *s);
 void	free_stack(t_stack_node *s);
 int		stack_len(t_stack_node *s);
 int		has_duplicates(t_stack_node *s);
+void	stack_error(t_stack_node *a, char **args);
 
 int		is_sorted(t_stack_node *s);
 

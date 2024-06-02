@@ -6,7 +6,7 @@
 /*   By: lgandari <lgandari@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/04 09:42:09 by lgandari          #+#    #+#             */
-/*   Updated: 2024/06/01 17:05:39 by lgandari         ###   ########.fr       */
+/*   Updated: 2024/06/02 16:40:23 by lgandari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,19 +22,6 @@ void	print_split(char **str)
 		ft_printf("$%s$\n", str[i]);
 		i++;
 	}
-}
-
-void	free_split(char **str)
-{
-	size_t	i;
-
-	i = 0;
-	while (str[i] != NULL)
-	{
-		free(str[i]);
-		i++;
-	}
-	free(str);
 }
 
 static char	*get_cmd_line(int argc, char **argv)
