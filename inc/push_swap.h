@@ -6,7 +6,7 @@
 /*   By: lgandari <lgandari@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 11:45:36 by lgandari          #+#    #+#             */
-/*   Updated: 2024/06/02 18:03:51 by lgandari         ###   ########.fr       */
+/*   Updated: 2024/06/02 18:09:00 by lgandari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,5 +56,9 @@ void			ss(t_stack_node **a, t_stack_node **b);
 void	ra(t_stack_node **a);
 void	rb(t_stack_node **b);
 void	rr(t_stack_node **a, t_stack_node **b);
+
+void	rra(t_stack_node **a);
+void	rrb(t_stack_node **b);
+void	rrr(t_stack_node **a, t_stack_node **b);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: lgandari <lgandari@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 11:50:28 by lgandari          #+#    #+#             */
-/*   Updated: 2024/06/02 17:31:00 by lgandari         ###   ########.fr       */
+/*   Updated: 2024/06/02 18:11:43 by lgandari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,14 @@ int	main(int argc, char **argv)
 	if (!is_sorted(a))
 	{
 		if (stack_len(a) == 2)
-			sa(&a, false);
+			sa(&a);
 		else if (stack_len(a) == 3)
 			sort_three(&a);
 		//else
 		//	turk_sort(&a, &b);
 	}
+	ft_printf("SORTED.\n");
+	print_stack(a);
 	free_stack(a);
 	free_split(args);
 	return (0);

@@ -6,7 +6,7 @@
 /*   By: lgandari <lgandari@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/02 17:57:57 by lgandari          #+#    #+#             */
-/*   Updated: 2024/06/02 18:07:44 by lgandari         ###   ########.fr       */
+/*   Updated: 2024/06/02 18:10:59 by lgandari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,14 @@
 static void	rev_rotate(t_stack_node **head)
 {
 	t_stack_node	*last_node;
-	t_stack_node	*penultimate_node;
+	t_stack_node	*penultimate;
 
 	if (!(*head) || !(*head)->next)
 		return ;
 	last_node = get_last_node(*head);
-	penultimate_node = (*head);
-	while (penultimate_node->next != last_node)
-		penultimate_node = penultimate->next;
+	penultimate = (*head);
+	while (penultimate->next != last_node)
+		penultimate = penultimate->next;
 	penultimate->next = NULL;
 	last_node->next = (*head);
 	(*head) = last_node;
