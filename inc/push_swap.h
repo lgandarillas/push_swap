@@ -6,7 +6,7 @@
 /*   By: lgandari <lgandari@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 11:45:36 by lgandari          #+#    #+#             */
-/*   Updated: 2024/06/02 17:29:40 by lgandari         ###   ########.fr       */
+/*   Updated: 2024/06/02 18:03:51 by lgandari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ int				stack_len(t_stack_node *s);
 int				has_duplicates(t_stack_node *s);
 void			stack_error(t_stack_node *a, char **args);
 t_stack_node	*get_max_node(t_stack_node *s);
+t_stack_node	*get_last_node(t_stack_node *s);
 
 int				is_sorted(t_stack_node *s);
 void			sort_three(t_stack_node **a);
@@ -51,5 +52,9 @@ void			sort_three(t_stack_node **a);
 void			sa(t_stack_node **a);
 void			sb(t_stack_node **b);
 void			ss(t_stack_node **a, t_stack_node **b);
+
+void	ra(t_stack_node **a);
+void	rb(t_stack_node **b);
+void	rr(t_stack_node **a, t_stack_node **b);
 
 #endif

@@ -1,10 +1,10 @@
 ## PENDIENTE
 
 # MOVIMIENTOS BÁSICOS
-OK - swap.c
-- push.c + test
+OK - swap_cmd.c
+OK - rotate_cmd.c + test
 - rev_rotate.c + test
-- rotate.c + test
+- push.c + test
 - sort_stacks.c + test
 - sort_three.c + test
 
