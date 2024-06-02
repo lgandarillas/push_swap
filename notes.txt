@@ -1,12 +1,13 @@
 ## PENDIENTE
 
 # MOVIMIENTOS BÁSICOS
+OK - swap.c
 - push.c + test
 - rev_rotate.c + test
 - rotate.c + test
 - sort_stacks.c + test
 - sort_three.c + test
-- swap.c + test
+
 
 # ALGORITMOS
 - sort_three()
