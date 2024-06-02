@@ -6,7 +6,7 @@
 /*   By: lgandari <lgandari@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 11:50:28 by lgandari          #+#    #+#             */
-/*   Updated: 2024/06/02 16:21:36 by lgandari         ###   ########.fr       */
+/*   Updated: 2024/06/02 16:23:33 by lgandari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	main(int argc, char **argv)
 	ft_printf("Is sorted = %d\n", is_sorted(a));
 	ft_printf("Has duplicates = %d\n", has_duplicates(a));
 	/*
-	if (!is_sorted(a))
+	if (!is_sorted(a) && !has_duplicates(a))
 	{
 		if (stack_len(a) == 2) -> OK
 			sa(&a, false);
