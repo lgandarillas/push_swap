@@ -6,7 +6,7 @@
 /*   By: lgandari <lgandari@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/01 11:56:15 by lgandari          #+#    #+#             */
-/*   Updated: 2024/06/01 16:46:03 by lgandari         ###   ########.fr       */
+/*   Updated: 2024/06/03 16:28:55 by lgandari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ static void	append_node(t_stack_node **stack, int n)
 	node->next = NULL;
 	node->num = n;
 	node->idx = -1;
-	node->cost = -1;
+	node->push_cost = -1;
 	node->over_mid = 0;
-	node->cheapest = 0;
+	node->smallest_cost = 0;
 	node->target = NULL;
 	if (!(*stack))
 		*stack = node;

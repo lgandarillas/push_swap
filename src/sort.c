@@ -6,7 +6,7 @@
 /*   By: lgandari <lgandari@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/01 16:39:13 by lgandari          #+#    #+#             */
-/*   Updated: 2024/06/03 12:04:09 by lgandari         ###   ########.fr       */
+/*   Updated: 2024/06/03 16:32:22 by lgandari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ static void	update_stack_targets(t_stack_node *a, t_stack_node *b)
 }
 
 // OK, pero TESTEAR
-static void	update_stack_push_cost(a, b)
+static void	update_stack_push_cost(t_stack_node *a, t_stack_node *b)
 {
 	int	len_a;
 	int	len_b;
@@ -148,7 +148,7 @@ void	turk_sort(t_stack_node **a, t_stack_node **b)
 	len_a = stack_len(*a);
 	i = 0;
 	while (len_a-- > 3 && !is_sorted(*a) && i++ < 2)
-		pb(&a, &b);
+		pb(a, b);
 	while (len_a-- > 3 && !is_sorted(*a))
 	{
 		set_stack_values(*a, *b);
