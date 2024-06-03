@@ -6,7 +6,7 @@
 /*   By: lgandari <lgandari@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/01 16:39:13 by lgandari          #+#    #+#             */
-/*   Updated: 2024/06/03 18:46:35 by lgandari         ###   ########.fr       */
+/*   Updated: 2024/06/03 18:49:47 by lgandari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -145,7 +145,7 @@ static t_stack_node	*get_smallest_cost_node(t_stack_node **a)
 	t_stack_node	*current;
 
 	if (a == NULL || *a == NULL)
-		return ;
+		return (NULL);
 	current = *a;
 	while (current)
 	{
@@ -153,7 +153,7 @@ static t_stack_node	*get_smallest_cost_node(t_stack_node **a)
 			return (current);
 		current = current->next;
 	}
-	return ;
+	return (NULL);
 }
 
 
@@ -249,7 +249,7 @@ static void	set_target_b(t_stack_node *a, t_stack_node *b)
 			if (current_a->num > b->num && current_a->num < best_match_idx)
 			{
 				best_match_idx = current_a->num;
-				target_node = current_a;
+				target = current_a;
 			}
 			current_a = current_a->next;
 		}
@@ -262,7 +262,7 @@ static void	set_target_b(t_stack_node *a, t_stack_node *b)
 }
 
 // OK, pero TESTEAR
-static void	set_stack_b_values(*a, *b)
+static void	set_stack_b_values(t_stack_node *a, t_stack_node *b)
 {
 	update_stack_idx(a);
 	update_stack_idx(b);
