@@ -6,7 +6,7 @@
 /*   By: lgandari <lgandari@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/01 16:39:13 by lgandari          #+#    #+#             */
-/*   Updated: 2024/06/03 17:36:39 by lgandari         ###   ########.fr       */
+/*   Updated: 2024/06/03 18:37:07 by lgandari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,7 +130,7 @@ static void update_stack_smallest_cost(t_stack_node *stack)
 }
 
 // OK, pero TESTEAR
-static void	set_stack_values(t_stack_node *a, t_stack_node *b)
+static void	set_stack_a_values(t_stack_node *a, t_stack_node *b)
 {
 	update_stack_idx(a);
 	update_stack_idx(b);
@@ -199,7 +199,7 @@ static void	ensure_cheapest_up(t_stack_node **stack, t_stack_node *cheapest, cha
 	}
 }
 
-// SIN TERMINAR
+// OK, pero TESTEAR
 static void	turk_pb(t_stack_node **a, t_stack_node **b)
 {
 	t_stack_node	*cheapest;
@@ -214,6 +214,61 @@ static void	turk_pb(t_stack_node **a, t_stack_node **b)
 	pb(a, b);
 }
 
+// OK, pero TESTEAR
+static t_stack_node	*get_min_node(t_stack_node *s)
+{
+	t_stack_node	*current;
+	t_stack_node	*smallest;
+
+	if (s == NULL)
+		return ;
+	smallest = s;
+	current = s->next;
+	while (current)
+	{
+		if (current->num < smallest->num)
+			smallest = current;
+		current = current->next;
+	}
+	return (smallest);
+}
+
+//REVISAR
+static void	set_target_b(t_stack_node *a, t_stack_node *b)
+{
+	t_stack_node	*current_a;
+	t_stack_node	*target;
+	long			best_match_idx;
+
+	while (b)
+	{
+		best_match_idx = LONG_MAX;
+		current_a = a;
+		while (current_a)
+		{
+			if (current_a->num > b->num && current_a->num < best_match_idx)
+			{
+				best_match_idx = current_a->num;
+				target_node = current_a;
+			}
+			current_a = current_a->next;
+		}
+		if (best_match_idx == LONG_MAX)
+			b->target = get_min_node(a);
+		else
+			b->target = target;
+		b = b->next;
+	}
+}
+
+// REVISAR -> anadir a .h
+static void	set_stack_b_values(*a, *b)
+{
+	update_stack_idx(a);
+	update_stack_idx(b);
+	set_target_b(a, b);	// SIN HACER
+}
+
 // REVISAR -> anadir a .h
 void	turk_sort(t_stack_node **a, t_stack_node **b)
 {
@@ -226,15 +281,15 @@ void	turk_sort(t_stack_node **a, t_stack_node **b)
 		pb(a, b);
 	while (len_a-- > 3 && !is_sorted(*a))
 	{
-		set_stack_values(*a, *b);
+		set_stack_a_values(*a, *b);
 		turk_pb(a, b);
 	}
 	sort_three(a);
 	while (*b)
 	{
-		init_nodes_b(*a, *b);	// SIN HACER + anadir a .h
+		set_stack_b_values(*a, *b);
 		move_b_to_a(a, b);		// SIN HACER + anadir a .h
 	}
-	current_index(*a);			// SIN HACER + anadir a .h
+	update_stack_idx(*a);
 	min_on_top(a);				// SIN HACER + anadir a .h
 }
