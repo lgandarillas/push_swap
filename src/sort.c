@@ -6,7 +6,7 @@
 /*   By: lgandari <lgandari@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/01 16:39:13 by lgandari          #+#    #+#             */
-/*   Updated: 2024/06/03 11:34:53 by lgandari         ###   ########.fr       */
+/*   Updated: 2024/06/03 11:37:33 by lgandari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,6 +108,7 @@ static void	update_stack_push_cost(a, b)
 	}
 }
 
+// OK, pero TESTEAR
 static void update_stack_smallest_cost(t_stack_node *stack)
 {
 	long			smallest_cost;

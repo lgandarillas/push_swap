@@ -8,11 +8,11 @@ OK - sort_three.c
 - push.c + test
 - turk_sort.c + test
 
+
 # PENDIENTE
+- Video min 40:00
 - Cambiar variables "s" -> "stack"
 
-# VIDEO
-- min 32:00
 
 # TEST SWAP
 - linux_cecker
