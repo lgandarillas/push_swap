@@ -6,7 +6,7 @@
 /*   By: lgandari <lgandari@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/01 16:39:13 by lgandari          #+#    #+#             */
-/*   Updated: 2024/06/03 17:00:32 by lgandari         ###   ########.fr       */
+/*   Updated: 2024/06/03 17:13:55 by lgandari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -157,17 +157,25 @@ static t_stack_node	*get_smallest_cost_node(t_stack_node **a)
 }
 
 
-// SIN TERMINAR
-static void	bring_cheapest_up(t_stack_node **a,
-									 t_stack_node **b,
-									 t_stack_node *cheapest)
+// OK, pero TESTEAR
+static void	bring_cheapest_up(t_stack_node **a, t_stack_node **b, 
+	t_stack_node *cheapest)
 {
 	while (*b != cheapest->target && *a != cheapest)
 		rr(a, b);
-	current_index(*a);
-	current_index(*b);
+	update_stack_idx(*a);
+	update_stack_idx(*b);
 }
 
+// OK, pero TESTEAR
+static void	reverse_bring_cheapest_up(t_stack_node **a, t_stack_node **b, 
+	t_stack_node *cheapest)
+{
+	while (*b != cheapest->target && *a != cheapest)
+		rrr(a, b);
+	update_stack_idx(*a);
+	update_stack_idx(*b);
+}
 
 // SIN TERMINAR
 static void	turk_pb(t_stack_node **a, t_stack_node **b)
@@ -177,6 +185,8 @@ static void	turk_pb(t_stack_node **a, t_stack_node **b)
 	cheapest = get_smallest_cost_node(*a);
 	if (cheapest->over_mid && cheapest->target->over_mid)
 		bring_cheapest_up(a, b, cheapest);
+	else if (!(cheapest->over_mid) && !(cheapest->target->over_mid))
+		reverse_bring_cheapest_up(a, b, cheapest);
 
 }
 

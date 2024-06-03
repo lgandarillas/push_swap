@@ -12,7 +12,7 @@ OK - push.c
 # PENDIENTE
 - Video min 40:00
 - Cambiar variables "s" -> "stack"
-
+- Unificar bring_cheapest_up y reverse_bring_cheapest_up
 
 # TEST SWAP
 - linux_cecker
