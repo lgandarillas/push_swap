@@ -6,7 +6,7 @@
 /*   By: lgandari <lgandari@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 11:45:36 by lgandari          #+#    #+#             */
-/*   Updated: 2024/06/03 11:34:35 by lgandari         ###   ########.fr       */
+/*   Updated: 2024/06/03 18:56:16 by lgandari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ t_stack_node	*get_last_node(t_stack_node *s);
 
 int				is_sorted(t_stack_node *s);
 void			sort_three(t_stack_node **a);
+void			turk_sort(t_stack_node **a, t_stack_node **b);
 
 void			pa(t_stack_node **a, t_stack_node **b);
 void			pb(t_stack_node **a, t_stack_node **b);
