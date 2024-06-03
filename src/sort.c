@@ -6,7 +6,7 @@
 /*   By: lgandari <lgandari@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/01 16:39:13 by lgandari          #+#    #+#             */
-/*   Updated: 2024/06/03 16:32:22 by lgandari         ###   ########.fr       */
+/*   Updated: 2024/06/03 17:00:32 by lgandari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,7 +112,7 @@ static void	update_stack_push_cost(t_stack_node *a, t_stack_node *b)
 static void update_stack_smallest_cost(t_stack_node *stack)
 {
 	long			smallest_cost;
-	t_stack_node	*best_node;
+	t_stack_node	*cheapest;
 
 	if (!stack)
 		return ;
@@ -122,14 +122,14 @@ static void update_stack_smallest_cost(t_stack_node *stack)
 		if (stack->push_cost < smallest_cost)
 		{
 			smallest_cost = stack->push_cost;
-			best_node = stack;
+			cheapest = stack;
 		}
 		stack = stack->next;
 	}
-	best_node->smallest_cost = 1;
+	cheapest->smallest_cost = 1;
 }
 
-// REVISAR
+// OK, pero TESTEAR
 static void	set_stack_values(t_stack_node *a, t_stack_node *b)
 {
 	update_stack_idx(a);
@@ -137,6 +137,47 @@ static void	set_stack_values(t_stack_node *a, t_stack_node *b)
 	update_stack_targets(a, b);
 	update_stack_push_cost(a, b);
 	update_stack_smallest_cost(a);
+}
+
+// OK, pero TESTEAR
+static t_stack_node	*get_smallest_cost_node(t_stack_node **a)
+{
+	t_stack_node	*current;
+
+	if (a == NULL || *a == NULL)
+		return ;
+	current = *a;
+	while (current)
+	{
+		if (current->smallest_cost == 1)
+			return (current);
+		current = current->next;
+	}
+	return ;
+}
+
+
+// SIN TERMINAR
+static void	bring_cheapest_up(t_stack_node **a,
+									 t_stack_node **b,
+									 t_stack_node *cheapest)
+{
+	while (*b != cheapest->target && *a != cheapest)
+		rr(a, b);
+	current_index(*a);
+	current_index(*b);
+}
+
+
+// SIN TERMINAR
+static void	turk_pb(t_stack_node **a, t_stack_node **b)
+{
+	t_stack_node	*cheapest;
+
+	cheapest = get_smallest_cost_node(*a);
+	if (cheapest->over_mid && cheapest->target->over_mid)
+		bring_cheapest_up(a, b, cheapest);
+
 }
 
 // REVISAR -> anadir a .h
@@ -152,7 +193,7 @@ void	turk_sort(t_stack_node **a, t_stack_node **b)
 	while (len_a-- > 3 && !is_sorted(*a))
 	{
 		set_stack_values(*a, *b);
-		move_a_to_b(a, b);		// SIN HACER + anadir a .h
+		turk_pb(a, b);
 	}
 	sort_three(a);
 	while (*b)
