@@ -4,14 +4,12 @@
 OK - swap_cmd.c
 OK - rotate_cmd.c
 OK - rev_rotate.c
+OK - sort_three.c
 - push.c + test
-- sort_stacks.c + test
-- sort_three.c + test
+- turk_sort.c + test
 
-
-# ALGORITMOS
-- sort_three()
-- turk_sort()
+# PENDIENTE
+- Cambiar variables "s" -> "stack"
 
 # VIDEO
 - min 32:00

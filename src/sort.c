@@ -6,7 +6,7 @@
 /*   By: lgandari <lgandari@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/01 16:39:13 by lgandari          #+#    #+#             */
-/*   Updated: 2024/06/02 17:28:08 by lgandari         ###   ########.fr       */
+/*   Updated: 2024/06/03 10:39:00 by lgandari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,33 +25,6 @@ void	sort_three(t_stack_node **a)
 		sa(a);
 }
 
-// REVISAR - sort.c
-/*
-void	turk_sort(t_stack_node **a, t_stack_node **b)
-{
-	int	len_a;
-
-	len_a = stack_len(*a);
-	if (len_a-- > 3 && !is_sorted(*a))
-		pb(b, a);
-	if (len_a-- > 3 && !is_sorted(*a))
-		pb(b, a);
-	while (len_a-- > 3 && !is_sorted(*a))
-	{
-		init_nodes_a(*a, *b);
-		move_a_to_b(a, b);
-	}
-	sort_three(a);
-	while (*b)
-	{
-		init_nodes_b(*a, *b);
-		move_b_to_a(a, b);
-	}
-	current_index(*a);
-	min_on_top(a);
-}
-*/
-
 int	is_sorted(t_stack_node *s)
 {
 	if (!s)
@@ -63,4 +36,53 @@ int	is_sorted(t_stack_node *s)
 		s = s->next;
 	}
 	return (1);
+}
+
+// OK, pero REVISAR
+static void	update_stack_values(t_stack_node *stack)
+{
+	int	i;
+	int	median;
+
+	i = 0;
+	if (!stack)
+		return ;
+	median = stack_len(stack) / 2;
+	while (stack)
+	{
+		stack->idx = i;
+		if (i <= median)
+			stack->over_mid = 1;
+		else
+			stack->over_mid = 0;
+		stack = stack->next;
+		i++;
+	}
+}
+
+// REVISAR
+static void	set_node_a_values(t_stack_node *a, t_stack_node *b)
+{
+	update_stack_values(a);
+	update_stack_values(b);
+	set_target_a(a, b);
+	cost_analysis_a(a, b);
+	set_cheapest(a);
+}
+
+// REVISAR -> anadir a .h
+void	turk_sort(t_stack_node **a, t_stack_node **b)
+{
+	int	len_a;
+	int	i;
+
+	len_a = stack_len(*a);
+	i = 0;
+	while (len_a-- > 3 && !is_sorted(*a) && i++ < 2)
+		pb(a, b); // SIN HACER + anadir a .h
+	while (len_a-- > 3 && !is_sorted(*a))
+	{
+		init_nodes_a(*a, *b); 	// SIN HACER + anadir a .h
+		move_a_to_b(a, b);		// SIN HACER + anadir a .h
+	}
 }

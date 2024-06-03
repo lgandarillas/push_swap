@@ -6,7 +6,7 @@
 /*   By: lgandari <lgandari@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/01 16:30:56 by lgandari          #+#    #+#             */
-/*   Updated: 2024/06/02 18:03:32 by lgandari         ###   ########.fr       */
+/*   Updated: 2024/06/03 10:11:04 by lgandari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ int	has_duplicates(t_stack_node *s)
 	return (0);
 }
 
-t_stack_node *get_last_node(t_stack_node *s)
+t_stack_node	*get_last_node(t_stack_node *s)
 {
 	while (s->next != NULL)
 		s = s->next;
