@@ -6,7 +6,7 @@
 /*   By: lgandari <lgandari@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/01 16:39:13 by lgandari          #+#    #+#             */
-/*   Updated: 2024/06/03 18:49:47 by lgandari         ###   ########.fr       */
+/*   Updated: 2024/06/03 18:52:33 by lgandari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -204,7 +204,7 @@ static void	turk_pb(t_stack_node **a, t_stack_node **b)
 {
 	t_stack_node	*cheapest;
 
-	cheapest = get_smallest_cost_node(*a);
+	cheapest = get_smallest_cost_node(a);
 	if (cheapest->over_mid && cheapest->target->over_mid)
 		bring_cheapest_up(a, b, cheapest);
 	else if (!(cheapest->over_mid) && !(cheapest->target->over_mid))
@@ -221,7 +221,7 @@ static t_stack_node	*get_min_node(t_stack_node *s)
 	t_stack_node	*smallest;
 
 	if (s == NULL)
-		return ;
+		return (NULL);
 	smallest = s;
 	current = s->next;
 	while (current)
