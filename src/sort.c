@@ -6,7 +6,7 @@
 /*   By: lgandari <lgandari@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/01 16:39:13 by lgandari          #+#    #+#             */
-/*   Updated: 2024/06/03 17:13:55 by lgandari         ###   ########.fr       */
+/*   Updated: 2024/06/03 17:36:39 by lgandari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -177,6 +177,28 @@ static void	reverse_bring_cheapest_up(t_stack_node **a, t_stack_node **b,
 	update_stack_idx(*b);
 }
 
+// OK, pero TESTEAR
+static void	ensure_cheapest_up(t_stack_node **stack, t_stack_node *cheapest, char s_name)
+{
+	while (*stack != cheapest)
+	{
+		if (s_name == 'a')
+		{
+			if (cheapest->over_mid)
+				ra(stack);
+			else
+				rra(stack);
+		}
+		else if (s_name == 'b')
+		{
+			if (cheapest->over_mid)
+				rb(stack);
+			else
+				rrb(stack);
+		}
+	}
+}
+
 // SIN TERMINAR
 static void	turk_pb(t_stack_node **a, t_stack_node **b)
 {
@@ -187,7 +209,9 @@ static void	turk_pb(t_stack_node **a, t_stack_node **b)
 		bring_cheapest_up(a, b, cheapest);
 	else if (!(cheapest->over_mid) && !(cheapest->target->over_mid))
 		reverse_bring_cheapest_up(a, b, cheapest);
-
+	ensure_cheapest_up(a, cheapest, 'a');
+	ensure_cheapest_up(b, cheapest->target, 'b');
+	pb(a, b);
 }
 
 // REVISAR -> anadir a .h
