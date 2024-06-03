@@ -5,7 +5,7 @@ OK - swap_cmd.c
 OK - rotate_cmd.c
 OK - rev_rotate.c
 OK - sort_three.c
-- push.c + test
+OK - push.c
 - turk_sort.c + test
 
 

@@ -6,7 +6,7 @@
 /*   By: lgandari <lgandari@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/01 17:11:46 by lgandari          #+#    #+#             */
-/*   Updated: 2024/06/02 18:39:26 by lgandari         ###   ########.fr       */
+/*   Updated: 2024/06/03 12:03:00 by lgandari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,12 @@ static void	push(t_stack_node **src, t_stack_node **dst)
 
 void	pa(t_stack_node **a, t_stack_node **b)
 {
-	push(a, b);
+	push(b, a);
 	ft_printf("pa\n");
 }
 
 void	pb(t_stack_node **a, t_stack_node **b)
 {
-	push(b, a);
+	push(a, b);
 	ft_printf("pb\n");
 }
