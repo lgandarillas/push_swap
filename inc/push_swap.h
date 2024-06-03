@@ -6,7 +6,7 @@
 /*   By: lgandari <lgandari@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 11:45:36 by lgandari          #+#    #+#             */
-/*   Updated: 2024/06/02 18:39:22 by lgandari         ###   ########.fr       */
+/*   Updated: 2024/06/03 11:34:35 by lgandari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ typedef struct s_stack_node
 {
 	int					num;
 	int					idx;
-	int					cost;
+	int					push_cost;
 	int					over_mid;
-	int					cheapest;
+	int					smallest_cost;
 	struct s_stack_node	*target;
 	struct s_stack_node	*next;
 }	t_stack_node;

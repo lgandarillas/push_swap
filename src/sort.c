@@ -6,7 +6,7 @@
 /*   By: lgandari <lgandari@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/01 16:39:13 by lgandari          #+#    #+#             */
-/*   Updated: 2024/06/03 11:13:44 by lgandari         ###   ########.fr       */
+/*   Updated: 2024/06/03 11:34:53 by lgandari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,14 +87,55 @@ static void	update_stack_targets(t_stack_node *a, t_stack_node *b)
 	}
 }
 
+// OK, pero TESTEAR
+static void	update_stack_push_cost(a, b)
+{
+	int	len_a;
+	int	len_b;
+
+	len_a = stack_len(a);
+	len_b = stack_len(b);
+	while (a)
+	{
+		a->push_cost = a->idx;
+		if (!(a->over_mid))
+			a->push_cost = len_a - (a->idx);
+		if (a->target->over_mid)
+			a->push_cost += a->target->idx;
+		else
+			a->push_cost += len_b - (a->target->idx);
+		a = a->next;
+	}
+}
+
+static void update_stack_smallest_cost(t_stack_node *stack)
+{
+	long			smallest_cost;
+	t_stack_node	*best_node;
+
+	if (!stack)
+		return ;
+	smallest_cost = LONG_MAX;
+	while (stack)
+	{
+		if (stack->push_cost < smallest_cost)
+		{
+			smallest_cost = stack->push_cost;
+			best_node = stack;
+		}
+		stack = stack->next;
+	}
+	best_node->smallest_cost = 1;
+}
+
 // REVISAR
 static void	set_stack_values(t_stack_node *a, t_stack_node *b)
 {
 	update_stack_idx(a);
 	update_stack_idx(b);
 	update_stack_targets(a, b);
-	cost_analysis_a(a, b);	// SIN HACER
-	set_cheapest(a);		// SIN HACER
+	update_stack_push_cost(a, b);
+	update_stack_smallest_cost(a);
 }
 
 // REVISAR -> anadir a .h
