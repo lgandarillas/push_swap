@@ -1,21 +1,10 @@
-## PENDIENTE
-
-# MOVIMIENTOS BÁSICOS
-OK - swap_cmd.c
-OK - rotate_cmd.c
-OK - rev_rotate.c
-OK - sort_three.c
-OK - push.c
-- turk_sort.c + test
-
-
 # PENDIENTE
-- Video min 40:00
+- Refactorizar sort.c
 - Cambiar variables "s" -> "stack"
 - Unificar bring_cheapest_up y reverse_bring_cheapest_up
 
 # TEST SWAP
-- linux_cecker
+- linux_checker
 ARG="5 -3 42"; ./push_swap $ARG | ./checker_linux $ARG
 - Check the number of commands executed
 ARG="5 -3 42"; ./push_swap &ARG | wc -l
