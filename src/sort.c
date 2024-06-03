@@ -6,7 +6,7 @@
 /*   By: lgandari <lgandari@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/01 16:39:13 by lgandari          #+#    #+#             */
-/*   Updated: 2024/06/03 10:39:00 by lgandari         ###   ########.fr       */
+/*   Updated: 2024/06/03 11:13:44 by lgandari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,8 @@ int	is_sorted(t_stack_node *s)
 	return (1);
 }
 
-// OK, pero REVISAR
-static void	update_stack_values(t_stack_node *stack)
+// OK, pero TESTEAR
+static void	update_stack_idx(t_stack_node *stack)
 {
 	int	i;
 	int	median;
@@ -60,14 +60,41 @@ static void	update_stack_values(t_stack_node *stack)
 	}
 }
 
-// REVISAR
-static void	set_node_a_values(t_stack_node *a, t_stack_node *b)
+// OK, pero TESTEAR
+static void	update_stack_targets(t_stack_node *a, t_stack_node *b)
 {
-	update_stack_values(a);
-	update_stack_values(b);
-	set_target_a(a, b);
-	cost_analysis_a(a, b);
-	set_cheapest(a);
+	t_stack_node	*b_node;
+	t_stack_node	*target;
+	long			closest_smaller;
+
+	while (a)
+	{
+		closest_smaller = LONG_MIN;
+		b_node = b;
+		while (b_node)
+		{
+			if (b_node->num < a->num && b_node->num > closest_smaller)
+			{
+				closest_smaller = b_node->num;
+				target = b_node;
+			}
+			b_node = b_node->next;
+		}
+		if (closest_smaller == LONG_MIN)
+			a->target = get_max_node(b);
+		else
+			a->target = target;
+	}
+}
+
+// REVISAR
+static void	set_stack_values(t_stack_node *a, t_stack_node *b)
+{
+	update_stack_idx(a);
+	update_stack_idx(b);
+	update_stack_targets(a, b);
+	cost_analysis_a(a, b);	// SIN HACER
+	set_cheapest(a);		// SIN HACER
 }
 
 // REVISAR -> anadir a .h
@@ -82,7 +109,15 @@ void	turk_sort(t_stack_node **a, t_stack_node **b)
 		pb(a, b); // SIN HACER + anadir a .h
 	while (len_a-- > 3 && !is_sorted(*a))
 	{
-		init_nodes_a(*a, *b); 	// SIN HACER + anadir a .h
+		set_stack_values(*a, *b);
 		move_a_to_b(a, b);		// SIN HACER + anadir a .h
 	}
+	sort_three(a);
+	while (*b)
+	{
+		init_nodes_b(*a, *b);	// SIN HACER + anadir a .h
+		move_b_to_a(a, b);		// SIN HACER + anadir a .h
+	}
+	current_index(*a);			// SIN HACER + anadir a .h
+	min_on_top(a);				// SIN HACER + anadir a .h
 }
