@@ -6,7 +6,7 @@
 /*   By: lgandari <lgandari@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/01 16:39:13 by lgandari          #+#    #+#             */
-/*   Updated: 2024/06/03 18:37:07 by lgandari         ###   ########.fr       */
+/*   Updated: 2024/06/03 18:46:35 by lgandari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -233,7 +233,7 @@ static t_stack_node	*get_min_node(t_stack_node *s)
 	return (smallest);
 }
 
-//REVISAR
+// OK, pero TESTEAR
 static void	set_target_b(t_stack_node *a, t_stack_node *b)
 {
 	t_stack_node	*current_a;
@@ -261,12 +261,31 @@ static void	set_target_b(t_stack_node *a, t_stack_node *b)
 	}
 }
 
-// REVISAR -> anadir a .h
+// OK, pero TESTEAR
 static void	set_stack_b_values(*a, *b)
 {
 	update_stack_idx(a);
 	update_stack_idx(b);
-	set_target_b(a, b);	// SIN HACER
+	set_target_b(a, b);
+}
+
+// OK, pero TESTEAR
+static void	turk_pa(t_stack_node **a, t_stack_node **b)
+{
+	ensure_cheapest_up(a, (*b)->target, 'a');
+	pa(a, b);
+}
+
+// OK, pero TESTEAR
+static void	bring_min_up(t_stack_node **a)
+{
+	while ((*a)->num != get_min_node(*a)->num)
+	{
+		if (get_min_node(*a)->over_mid)
+			ra(a);
+		else
+			rra(a);
+	}
 }
 
 // REVISAR -> anadir a .h
@@ -288,8 +307,8 @@ void	turk_sort(t_stack_node **a, t_stack_node **b)
 	while (*b)
 	{
 		set_stack_b_values(*a, *b);
-		move_b_to_a(a, b);		// SIN HACER + anadir a .h
+		turk_pa(a, b);
 	}
 	update_stack_idx(*a);
-	min_on_top(a);				// SIN HACER + anadir a .h
+	bring_min_up(a);
 }
