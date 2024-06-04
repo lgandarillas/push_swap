@@ -6,7 +6,7 @@
 /*   By: lgandari <lgandari@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/01 16:39:13 by lgandari          #+#    #+#             */
-/*   Updated: 2024/06/04 20:29:14 by lgandari         ###   ########.fr       */
+/*   Updated: 2024/06/04 20:58:33 by lgandari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,7 +110,7 @@ static void	update_stack_push_cost(t_stack_node *a, t_stack_node *b)
 }
 
 // OK, pero TESTEAR
-static void update_stack_smallest_cost(t_stack_node *stack)
+static void	update_stack_smallest_cost(t_stack_node *stack)
 {
 	long			smallest_cost;
 	t_stack_node	*cheapest;
@@ -157,9 +157,8 @@ static t_stack_node	*get_smallest_cost_node(t_stack_node **a)
 	return (NULL);
 }
 
-
 // OK, pero TESTEAR
-static void	bring_cheapest_up(t_stack_node **a, t_stack_node **b, 
+static void	bring_cheapest_up(t_stack_node **a, t_stack_node **b,
 	t_stack_node *cheapest)
 {
 	while (*b != cheapest->target && *a != cheapest)
@@ -169,7 +168,7 @@ static void	bring_cheapest_up(t_stack_node **a, t_stack_node **b,
 }
 
 // OK, pero TESTEAR
-static void	reverse_bring_cheapest_up(t_stack_node **a, t_stack_node **b, 
+static void	reverse_bring_cheapest_up(t_stack_node **a, t_stack_node **b,
 	t_stack_node *cheapest)
 {
 	while (*b != cheapest->target && *a != cheapest)
@@ -179,7 +178,8 @@ static void	reverse_bring_cheapest_up(t_stack_node **a, t_stack_node **b,
 }
 
 // OK, pero TESTEAR
-static void	ensure_cheapest_up(t_stack_node **stack, t_stack_node *cheapest, char s_name)
+static void	ensure_cheapest_up(t_stack_node **stack,
+	t_stack_node *cheapest, char s_name)
 {
 	while (*stack != cheapest)
 	{
