@@ -6,7 +6,7 @@
 /*   By: lgandari <lgandari@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/01 16:39:13 by lgandari          #+#    #+#             */
-/*   Updated: 2024/06/03 18:52:33 by lgandari         ###   ########.fr       */
+/*   Updated: 2024/06/04 20:28:23 by lgandari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int	is_sorted(t_stack_node *s)
 	return (1);
 }
 
-// OK, pero TESTEAR
+// OK (nuevo)
 static void	update_stack_idx(t_stack_node *stack)
 {
 	int	i;
@@ -60,7 +60,7 @@ static void	update_stack_idx(t_stack_node *stack)
 	}
 }
 
-// OK, pero TESTEAR
+// OK, (nuevo)
 static void	update_stack_targets(t_stack_node *a, t_stack_node *b)
 {
 	t_stack_node	*b_node;
@@ -84,6 +84,7 @@ static void	update_stack_targets(t_stack_node *a, t_stack_node *b)
 			a->target = get_max_node(b);
 		else
 			a->target = target;
+		a = a->next;
 	}
 }
 
@@ -129,8 +130,8 @@ static void update_stack_smallest_cost(t_stack_node *stack)
 	cheapest->smallest_cost = 1;
 }
 
-// OK, pero TESTEAR
-static void	set_stack_a_values(t_stack_node *a, t_stack_node *b)
+// OK (nuevo)
+static void	update_stack_a(t_stack_node *a, t_stack_node *b)
 {
 	update_stack_idx(a);
 	update_stack_idx(b);
@@ -292,15 +293,19 @@ static void	bring_min_up(t_stack_node **a)
 void	turk_sort(t_stack_node **a, t_stack_node **b)
 {
 	int	len_a;
-	int	i;
+	int	len_b;
 
 	len_a = stack_len(*a);
-	i = 0;
-	while (len_a-- > 3 && !is_sorted(*a) && i++ < 2)
+	if (len_a-- > 3 && !is_sorted(*a))
 		pb(a, b);
+	if (len_a-- > 3 && !is_sorted(*a))
+		pb(a, b);
+	len_b = stack_len(*b);
+	if (len_b == 2 && (*b)->num < (*b)->next->num)
+		sb(*b);
 	while (len_a-- > 3 && !is_sorted(*a))
 	{
-		set_stack_a_values(*a, *b);
+		update_stack_a(*a, *b);
 		turk_pb(a, b);
 	}
 	sort_three(a);
