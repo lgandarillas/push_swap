@@ -1,7 +1,4 @@
 # PENDIENTE
-- Arreglar sort
-	- Video 34:00
-
 - Refactorizar sort.c
 - Cambiar variables "s" -> "stack"
 - Unificar bring_cheapest_up y reverse_bring_cheapest_up
