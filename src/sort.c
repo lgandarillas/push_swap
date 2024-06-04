@@ -6,7 +6,7 @@
 /*   By: lgandari <lgandari@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/01 16:39:13 by lgandari          #+#    #+#             */
-/*   Updated: 2024/06/04 20:28:23 by lgandari         ###   ########.fr       */
+/*   Updated: 2024/06/04 20:29:14 by lgandari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -302,7 +302,7 @@ void	turk_sort(t_stack_node **a, t_stack_node **b)
 		pb(a, b);
 	len_b = stack_len(*b);
 	if (len_b == 2 && (*b)->num < (*b)->next->num)
-		sb(*b);
+		sb(b);
 	while (len_a-- > 3 && !is_sorted(*a))
 	{
 		update_stack_a(*a, *b);
