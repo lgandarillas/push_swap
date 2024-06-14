@@ -6,7 +6,7 @@
 /*   By: lgandari <lgandari@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 11:45:36 by lgandari          #+#    #+#             */
-/*   Updated: 2024/06/14 17:17:45 by lgandari         ###   ########.fr       */
+/*   Updated: 2024/06/14 17:45:30 by lgandari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,8 @@ t_stack_node	*get_smallest_cost_node(t_stack_node **a);
 int				is_sorted(t_stack_node *s);
 void			sort_three(t_stack_node **a);
 void			turk_sort(t_stack_node **a, t_stack_node **b);
+void			update_stack_a(t_stack_node *a, t_stack_node *b);
+void			update_stack_idx(t_stack_node *stack);
 
 void			pa(t_stack_node **a, t_stack_node **b);
 void			pb(t_stack_node **a, t_stack_node **b);
