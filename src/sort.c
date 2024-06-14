@@ -6,7 +6,7 @@
 /*   By: lgandari <lgandari@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/01 16:39:13 by lgandari          #+#    #+#             */
-/*   Updated: 2024/06/04 20:58:33 by lgandari         ###   ########.fr       */
+/*   Updated: 2024/06/14 15:54:33 by lgandari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,15 +25,15 @@ void	sort_three(t_stack_node **a)
 		sa(a);
 }
 
-int	is_sorted(t_stack_node *s)
+int	is_sorted(t_stack_node *stack)
 {
-	if (!s)
+	if (!stack)
 		return (1);
-	while (s->next)
+	while (stack->next)
 	{
-		if (s->num > s->next->num)
+		if (stack->num > stack->next->num)
 			return (0);
-		s = s->next;
+		stack = stack->next;
 	}
 	return (1);
 }
@@ -216,15 +216,15 @@ static void	turk_pb(t_stack_node **a, t_stack_node **b)
 }
 
 // OK, pero TESTEAR
-static t_stack_node	*get_min_node(t_stack_node *s)
+static t_stack_node	*get_min_node(t_stack_node *stack)
 {
 	t_stack_node	*current;
 	t_stack_node	*smallest;
 
-	if (s == NULL)
+	if (stack == NULL)
 		return (NULL);
-	smallest = s;
-	current = s->next;
+	smallest = stack;
+	current = stack->next;
 	while (current)
 	{
 		if (current->num < smallest->num)

@@ -6,17 +6,17 @@
 /*   By: lgandari <lgandari@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/01 16:30:56 by lgandari          #+#    #+#             */
-/*   Updated: 2024/06/03 10:11:04 by lgandari         ###   ########.fr       */
+/*   Updated: 2024/06/14 15:52:33 by lgandari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-void	print_stack(t_stack_node *s)
+void	print_stack(t_stack_node *stack)
 {
 	t_stack_node	*current;
 
-	current = s;
+	current = stack;
 	while (current != NULL)
 	{
 		ft_printf("Node='%d'\n", current->num);
@@ -24,12 +24,12 @@ void	print_stack(t_stack_node *s)
 	}
 }
 
-int	stack_len(t_stack_node *s)
+int	stack_len(t_stack_node *stack)
 {
 	int				len;
 	t_stack_node	*current;
 
-	current = s;
+	current = stack;
 	len = 0;
 	while (current != NULL)
 	{
@@ -39,12 +39,12 @@ int	stack_len(t_stack_node *s)
 	return (len);
 }
 
-int	has_duplicates(t_stack_node *s)
+int	has_duplicates(t_stack_node *stack)
 {
 	t_stack_node	*current;
 	t_stack_node	*checker;
 
-	current = s;
+	current = stack;
 	while (current != NULL)
 	{
 		checker = current->next;
@@ -59,22 +59,22 @@ int	has_duplicates(t_stack_node *s)
 	return (0);
 }
 
-t_stack_node	*get_last_node(t_stack_node *s)
+t_stack_node	*get_last_node(t_stack_node *stack)
 {
-	while (s->next != NULL)
-		s = s->next;
-	return (s);
+	while (stack->next != NULL)
+		stack = stack->next;
+	return (stack);
 }
 
-t_stack_node	*get_max_node(t_stack_node *s)
+t_stack_node	*get_max_node(t_stack_node *stack)
 {
 	t_stack_node	*current;
 	t_stack_node	*biggest;
 
-	if (s == NULL)
+	if (stack == NULL)
 		return (NULL);
-	biggest = s;
-	current = s->next;
+	biggest = stack;
+	current = stack->next;
 	while (current != NULL)
 	{
 		if (current->num > biggest->num)
