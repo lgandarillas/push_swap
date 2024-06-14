@@ -6,7 +6,7 @@
 /*   By: lgandari <lgandari@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/01 16:39:13 by lgandari          #+#    #+#             */
-/*   Updated: 2024/06/14 17:08:56 by lgandari         ###   ########.fr       */
+/*   Updated: 2024/06/14 17:16:38 by lgandari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,22 +120,6 @@ static void	update_stack_a(t_stack_node *a, t_stack_node *b)
 	update_stack_targets(a, b);
 	update_stack_push_cost(a, b);
 	update_stack_smallest_cost(a);
-}
-
-static t_stack_node	*get_smallest_cost_node(t_stack_node **a)
-{
-	t_stack_node	*current;
-
-	if (a == NULL || *a == NULL)
-		return (NULL);
-	current = *a;
-	while (current)
-	{
-		if (current->smallest_cost == 1)
-			return (current);
-		current = current->next;
-	}
-	return (NULL);
 }
 
 static void	bring_cheapest_up(t_stack_node **a, t_stack_node **b,

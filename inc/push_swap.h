@@ -6,7 +6,7 @@
 /*   By: lgandari <lgandari@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 11:45:36 by lgandari          #+#    #+#             */
-/*   Updated: 2024/06/03 18:56:16 by lgandari         ###   ########.fr       */
+/*   Updated: 2024/06/14 17:17:45 by lgandari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,10 @@ void			free_stack(t_stack_node *s);
 int				stack_len(t_stack_node *s);
 int				has_duplicates(t_stack_node *s);
 void			stack_error(t_stack_node *a, char **args);
+
 t_stack_node	*get_max_node(t_stack_node *s);
 t_stack_node	*get_last_node(t_stack_node *s);
+t_stack_node	*get_smallest_cost_node(t_stack_node **a);
 
 int				is_sorted(t_stack_node *s);
 void			sort_three(t_stack_node **a);

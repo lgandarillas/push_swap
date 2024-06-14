@@ -6,7 +6,7 @@
 /*   By: lgandari <lgandari@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/14 17:06:41 by lgandari          #+#    #+#             */
-/*   Updated: 2024/06/14 17:07:33 by lgandari         ###   ########.fr       */
+/*   Updated: 2024/06/14 17:17:21 by lgandari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,4 +35,20 @@ t_stack_node	*get_max_node(t_stack_node *stack)
 		current = current->next;
 	}
 	return (biggest);
+}
+
+t_stack_node	*get_smallest_cost_node(t_stack_node **a)
+{
+	t_stack_node	*current;
+
+	if (a == NULL || *a == NULL)
+		return (NULL);
+	current = *a;
+	while (current)
+	{
+		if (current->smallest_cost == 1)
+			return (current);
+		current = current->next;
+	}
+	return (NULL);
 }
