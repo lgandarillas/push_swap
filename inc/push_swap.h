@@ -6,7 +6,7 @@
 /*   By: lgandari <lgandari@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 11:45:36 by lgandari          #+#    #+#             */
-/*   Updated: 2024/06/14 17:50:47 by lgandari         ###   ########.fr       */
+/*   Updated: 2024/06/14 18:06:53 by lgandari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,14 @@ void			update_stack_idx(t_stack_node *stack);
 
 void			pa(t_stack_node **a, t_stack_node **b);
 void			pb(t_stack_node **a, t_stack_node **b);
+
+void			bring_cheapest_up(t_stack_node **a, t_stack_node **b, \
+				t_stack_node *cheapest);
+void			reverse_bring_cheapest_up(t_stack_node **a, t_stack_node **b, \
+				t_stack_node *cheapest);
+void			ensure_cheapest_up(t_stack_node **stack, \
+				t_stack_node *cheapest, char s_name);
+void			bring_min_up(t_stack_node **a);
 
 void			sa(t_stack_node **a);
 void			sb(t_stack_node **b);

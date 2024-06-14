@@ -6,65 +6,11 @@
 /*   By: lgandari <lgandari@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/01 16:39:13 by lgandari          #+#    #+#             */
-/*   Updated: 2024/06/14 17:50:57 by lgandari         ###   ########.fr       */
+/*   Updated: 2024/06/14 18:02:18 by lgandari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
-
-static void	bring_cheapest_up(t_stack_node **a, t_stack_node **b,
-	t_stack_node *cheapest)
-{
-	while (*b != cheapest->target && *a != cheapest)
-		rr(a, b);
-	update_stack_idx(*a);
-	update_stack_idx(*b);
-}
-
-static void	reverse_bring_cheapest_up(t_stack_node **a, t_stack_node **b,
-	t_stack_node *cheapest)
-{
-	while (*b != cheapest->target && *a != cheapest)
-		rrr(a, b);
-	update_stack_idx(*a);
-	update_stack_idx(*b);
-}
-
-static void	ensure_cheapest_up(t_stack_node **stack,
-	t_stack_node *cheapest, char s_name)
-{
-	while (*stack != cheapest)
-	{
-		if (s_name == 'a')
-		{
-			if (cheapest->over_mid)
-				ra(stack);
-			else
-				rra(stack);
-		}
-		else if (s_name == 'b')
-		{
-			if (cheapest->over_mid)
-				rb(stack);
-			else
-				rrb(stack);
-		}
-	}
-}
-
-static void	turk_pb(t_stack_node **a, t_stack_node **b)
-{
-	t_stack_node	*cheapest;
-
-	cheapest = get_smallest_cost_node(a);
-	if (cheapest->over_mid && cheapest->target->over_mid)
-		bring_cheapest_up(a, b, cheapest);
-	else if (!(cheapest->over_mid) && !(cheapest->target->over_mid))
-		reverse_bring_cheapest_up(a, b, cheapest);
-	ensure_cheapest_up(a, cheapest, 'a');
-	ensure_cheapest_up(b, cheapest->target, 'b');
-	pb(a, b);
-}
 
 static void	set_target_b(t_stack_node *a, t_stack_node *b)
 {
@@ -100,21 +46,24 @@ static void	set_stack_b_values(t_stack_node *a, t_stack_node *b)
 	set_target_b(a, b);
 }
 
+static void	turk_pb(t_stack_node **a, t_stack_node **b)
+{
+	t_stack_node	*cheapest;
+
+	cheapest = get_smallest_cost_node(a);
+	if (cheapest->over_mid && cheapest->target->over_mid)
+		bring_cheapest_up(a, b, cheapest);
+	else if (!(cheapest->over_mid) && !(cheapest->target->over_mid))
+		reverse_bring_cheapest_up(a, b, cheapest);
+	ensure_cheapest_up(a, cheapest, 'a');
+	ensure_cheapest_up(b, cheapest->target, 'b');
+	pb(a, b);
+}
+
 static void	turk_pa(t_stack_node **a, t_stack_node **b)
 {
 	ensure_cheapest_up(a, (*b)->target, 'a');
 	pa(a, b);
-}
-
-static void	bring_min_up(t_stack_node **a)
-{
-	while ((*a)->num != get_min_node(*a)->num)
-	{
-		if (get_min_node(*a)->over_mid)
-			ra(a);
-		else
-			rra(a);
-	}
 }
 
 void	turk_sort(t_stack_node **a, t_stack_node **b)
