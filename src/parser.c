@@ -6,23 +6,11 @@
 /*   By: lgandari <lgandari@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/04 09:42:09 by lgandari          #+#    #+#             */
-/*   Updated: 2024/06/02 16:40:23 by lgandari         ###   ########.fr       */
+/*   Updated: 2024/06/14 16:32:03 by lgandari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
-
-void	print_split(char **str)
-{
-	size_t	i;
-
-	i = 0;
-	while (str[i] != NULL)
-	{
-		ft_printf("$%s$\n", str[i]);
-		i++;
-	}
-}
 
 static char	*get_cmd_line(int argc, char **argv)
 {
