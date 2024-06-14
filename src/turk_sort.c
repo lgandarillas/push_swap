@@ -6,7 +6,7 @@
 /*   By: lgandari <lgandari@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/01 16:39:13 by lgandari          #+#    #+#             */
-/*   Updated: 2024/06/14 17:43:26 by lgandari         ###   ########.fr       */
+/*   Updated: 2024/06/14 17:50:57 by lgandari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,24 +64,6 @@ static void	turk_pb(t_stack_node **a, t_stack_node **b)
 	ensure_cheapest_up(a, cheapest, 'a');
 	ensure_cheapest_up(b, cheapest->target, 'b');
 	pb(a, b);
-}
-
-static t_stack_node	*get_min_node(t_stack_node *stack)
-{
-	t_stack_node	*current;
-	t_stack_node	*smallest;
-
-	if (stack == NULL)
-		return (NULL);
-	smallest = stack;
-	current = stack->next;
-	while (current)
-	{
-		if (current->num < smallest->num)
-			smallest = current;
-		current = current->next;
-	}
-	return (smallest);
 }
 
 static void	set_target_b(t_stack_node *a, t_stack_node *b)
