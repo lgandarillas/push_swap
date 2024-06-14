@@ -6,7 +6,7 @@
 /*   By: lgandari <lgandari@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/01 16:39:13 by lgandari          #+#    #+#             */
-/*   Updated: 2024/06/14 15:54:33 by lgandari         ###   ########.fr       */
+/*   Updated: 2024/06/14 16:05:46 by lgandari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ int	is_sorted(t_stack_node *stack)
 	return (1);
 }
 
-// OK (nuevo)
 static void	update_stack_idx(t_stack_node *stack)
 {
 	int	i;
@@ -60,7 +59,6 @@ static void	update_stack_idx(t_stack_node *stack)
 	}
 }
 
-// OK, (nuevo)
 static void	update_stack_targets(t_stack_node *a, t_stack_node *b)
 {
 	t_stack_node	*b_node;
@@ -88,7 +86,6 @@ static void	update_stack_targets(t_stack_node *a, t_stack_node *b)
 	}
 }
 
-// OK, pero TESTEAR
 static void	update_stack_push_cost(t_stack_node *a, t_stack_node *b)
 {
 	int	len_a;
@@ -109,7 +106,6 @@ static void	update_stack_push_cost(t_stack_node *a, t_stack_node *b)
 	}
 }
 
-// OK, pero TESTEAR
 static void	update_stack_smallest_cost(t_stack_node *stack)
 {
 	long			smallest_cost;
@@ -130,7 +126,6 @@ static void	update_stack_smallest_cost(t_stack_node *stack)
 	cheapest->smallest_cost = 1;
 }
 
-// OK (nuevo)
 static void	update_stack_a(t_stack_node *a, t_stack_node *b)
 {
 	update_stack_idx(a);
@@ -140,7 +135,6 @@ static void	update_stack_a(t_stack_node *a, t_stack_node *b)
 	update_stack_smallest_cost(a);
 }
 
-// OK, pero TESTEAR
 static t_stack_node	*get_smallest_cost_node(t_stack_node **a)
 {
 	t_stack_node	*current;
@@ -157,7 +151,6 @@ static t_stack_node	*get_smallest_cost_node(t_stack_node **a)
 	return (NULL);
 }
 
-// OK, pero TESTEAR
 static void	bring_cheapest_up(t_stack_node **a, t_stack_node **b,
 	t_stack_node *cheapest)
 {
@@ -167,7 +160,6 @@ static void	bring_cheapest_up(t_stack_node **a, t_stack_node **b,
 	update_stack_idx(*b);
 }
 
-// OK, pero TESTEAR
 static void	reverse_bring_cheapest_up(t_stack_node **a, t_stack_node **b,
 	t_stack_node *cheapest)
 {
@@ -177,7 +169,6 @@ static void	reverse_bring_cheapest_up(t_stack_node **a, t_stack_node **b,
 	update_stack_idx(*b);
 }
 
-// OK, pero TESTEAR
 static void	ensure_cheapest_up(t_stack_node **stack,
 	t_stack_node *cheapest, char s_name)
 {
@@ -200,7 +191,6 @@ static void	ensure_cheapest_up(t_stack_node **stack,
 	}
 }
 
-// OK, pero TESTEAR
 static void	turk_pb(t_stack_node **a, t_stack_node **b)
 {
 	t_stack_node	*cheapest;
@@ -215,7 +205,6 @@ static void	turk_pb(t_stack_node **a, t_stack_node **b)
 	pb(a, b);
 }
 
-// OK, pero TESTEAR
 static t_stack_node	*get_min_node(t_stack_node *stack)
 {
 	t_stack_node	*current;
@@ -234,7 +223,6 @@ static t_stack_node	*get_min_node(t_stack_node *stack)
 	return (smallest);
 }
 
-// OK, pero TESTEAR
 static void	set_target_b(t_stack_node *a, t_stack_node *b)
 {
 	t_stack_node	*current_a;
@@ -262,7 +250,6 @@ static void	set_target_b(t_stack_node *a, t_stack_node *b)
 	}
 }
 
-// OK, pero TESTEAR
 static void	set_stack_b_values(t_stack_node *a, t_stack_node *b)
 {
 	update_stack_idx(a);
@@ -270,14 +257,12 @@ static void	set_stack_b_values(t_stack_node *a, t_stack_node *b)
 	set_target_b(a, b);
 }
 
-// OK, pero TESTEAR
 static void	turk_pa(t_stack_node **a, t_stack_node **b)
 {
 	ensure_cheapest_up(a, (*b)->target, 'a');
 	pa(a, b);
 }
 
-// OK, pero TESTEAR
 static void	bring_min_up(t_stack_node **a)
 {
 	while ((*a)->num != get_min_node(*a)->num)
@@ -289,7 +274,6 @@ static void	bring_min_up(t_stack_node **a)
 	}
 }
 
-// REVISAR -> anadir a .h
 void	turk_sort(t_stack_node **a, t_stack_node **b)
 {
 	int	len_a;
