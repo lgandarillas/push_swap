@@ -6,13 +6,13 @@
 /*   By: lgandari <lgandari@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/01 11:56:15 by lgandari          #+#    #+#             */
-/*   Updated: 2024/06/04 20:18:56 by lgandari         ###   ########.fr       */
+/*   Updated: 2024/06/14 16:27:22 by lgandari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-static void	append_node(t_stack_node **stack, int n)
+static void	append_node(t_stack_node **stack, int num)
 {
 	t_stack_node	*node;
 	t_stack_node	*last_node;
@@ -23,7 +23,7 @@ static void	append_node(t_stack_node **stack, int n)
 	if (!node)
 		return ;
 	node->next = NULL;
-	node->num = n;
+	node->num = num;
 	node->idx = -1;
 	node->push_cost = -1;
 	node->over_mid = -1;
@@ -40,7 +40,7 @@ static void	append_node(t_stack_node **stack, int n)
 	}
 }
 
-static int	get_num(const char *num)
+static int	get_number(const char *num)
 {
 	long	res;
 	long	sign;
@@ -67,16 +67,16 @@ static int	get_num(const char *num)
 	return (res);
 }
 
-void	init_stack(t_stack_node **a, char **args)
+void	init_stack(t_stack_node **stack, char **args)
 {
-	int	n;
+	int	num;
 	int	i;
 
 	i = 0;
 	while (args[i])
 	{
-		n = get_num(args[i]);
-		append_node(a, n);
+		num = get_number(args[i]);
+		append_node(stack, num);
 		i++;
 	}
 }
