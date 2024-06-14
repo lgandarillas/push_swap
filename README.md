@@ -39,6 +39,15 @@ make
 ./push_swap 4 2 5 3 1
 ./push_swap "4 2 5 3 1"
 ```
+4. Test
+- To test the number of moves.
+```bash
+ARG="4 67 3 87 23"; ./push_swap $ARG | wc -l
+```
+- To test if the list is sorted.
+```bash
+ARG="4 67 3 87 23"; ./push_swap $ARG | ./checker_linux $ARG
+```
 
 ## Algorithm Explanation
 ### Turk Algorithm
