@@ -6,7 +6,7 @@
 /*   By: lgandari <lgandari@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/01 16:39:13 by lgandari          #+#    #+#             */
-/*   Updated: 2024/06/14 16:05:46 by lgandari         ###   ########.fr       */
+/*   Updated: 2024/06/14 17:08:56 by lgandari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,19 +23,6 @@ void	sort_three(t_stack_node **a)
 		rra(a);
 	if ((*a)->num > (*a)->next->num)
 		sa(a);
-}
-
-int	is_sorted(t_stack_node *stack)
-{
-	if (!stack)
-		return (1);
-	while (stack->next)
-	{
-		if (stack->num > stack->next->num)
-			return (0);
-		stack = stack->next;
-	}
-	return (1);
 }
 
 static void	update_stack_idx(t_stack_node *stack)

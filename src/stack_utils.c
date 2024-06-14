@@ -6,7 +6,7 @@
 /*   By: lgandari <lgandari@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/01 16:30:56 by lgandari          #+#    #+#             */
-/*   Updated: 2024/06/14 16:55:43 by lgandari         ###   ########.fr       */
+/*   Updated: 2024/06/14 17:08:52 by lgandari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,27 +59,15 @@ int	stack_len(t_stack_node *stack)
 	return (len);
 }
 
-t_stack_node	*get_last_node(t_stack_node *stack)
+int	is_sorted(t_stack_node *stack)
 {
-	while (stack->next != NULL)
-		stack = stack->next;
-	return (stack);
-}
-
-t_stack_node	*get_max_node(t_stack_node *stack)
-{
-	t_stack_node	*current;
-	t_stack_node	*biggest;
-
-	if (stack == NULL)
-		return (NULL);
-	biggest = stack;
-	current = stack->next;
-	while (current != NULL)
+	if (!stack)
+		return (1);
+	while (stack->next)
 	{
-		if (current->num > biggest->num)
-			biggest = current;
-		current = current->next;
+		if (stack->num > stack->next->num)
+			return (0);
+		stack = stack->next;
 	}
-	return (biggest);
+	return (1);
 }
