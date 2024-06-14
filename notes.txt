@@ -1,8 +1,6 @@
 # PENDIENTE
 - Refactorizar sort.c
-- Cambiar variables "s" -> "stack"
 - Unificar bring_cheapest_up y reverse_bring_cheapest_up
-- Controlar bucle infinito en mayores de 6 elementos
 - Controlar error de circular list
 - Disminuir len con push (ej. en turk_sort inicio)
 
