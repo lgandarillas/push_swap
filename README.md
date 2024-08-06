@@ -41,6 +41,7 @@ make
 ```
 4. Test
 - To test the number of moves.
+- Take the randomized lists from [Number Randomizer](https://numbergenerator.org/numberlistrandomizer#!numbers=100&lines=1&range=1-100)
 ```bash
 ARG="4 67 3 87 23"; ./push_swap $ARG | wc -l
 ```
