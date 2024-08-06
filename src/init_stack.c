@@ -6,7 +6,7 @@
 /*   By: lgandari <lgandari@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/01 11:56:15 by lgandari          #+#    #+#             */
-/*   Updated: 2024/06/14 16:27:22 by lgandari         ###   ########.fr       */
+/*   Updated: 2024/08/06 20:09:15 by lgandari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,8 @@ static int	get_number(const char *num)
 	long	res;
 	long	sign;
 
+	if (num[0] == '\0')
+		print_error();
 	res = 0;
 	sign = 1;
 	if (*num == '+')
