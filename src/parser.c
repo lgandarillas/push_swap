@@ -6,7 +6,7 @@
 /*   By: lgandari <lgandari@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/04 09:42:09 by lgandari          #+#    #+#             */
-/*   Updated: 2024/08/06 20:07:33 by lgandari         ###   ########.fr       */
+/*   Updated: 2024/08/06 20:35:14 by lgandari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,12 +41,13 @@ char	**parser(int argc, char **argv)
 
 	if (argc == 1)
 		exit(EXIT_FAILURE);
-	i = 0;
-	while (i < argc)
+	i = -1;
+	while (++i < argc)
 	{
-		if (argv[i][0] == '\0')
+		if (argv[i][0] == '\0' || \
+			ft_strncmp(argv[i], "+", 1) == 0 || \
+			ft_strncmp(argv[i], "-", 1) == 0)
 			print_error();
-		i++;
 	}
 	if (argc == 2 && !argv[1][0])
 		print_error();
