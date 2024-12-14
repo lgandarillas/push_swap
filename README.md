@@ -1,4 +1,4 @@
-# push_swap
+# [push_swap | 42 School - Rank 02]
 
 ## Project Overview
 
